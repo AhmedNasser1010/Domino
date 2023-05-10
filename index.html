@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dominos Game</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="script.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="divTools">
+		<button class="reload" onclick="location.reload()">Reload</button>
+		<button class="cardsIsHidden" onclick="devSettings.cardsIsHidden = !devSettings.cardsIsHidden;
+		Dominoes.thisCards.forEach(card => {card.isHidden(devSettings.cardsIsHidden)})">Cards is hidden</button>
+		<button class="randomAuto" onclick="auto()">Random auto</button>
+		<button class="autoToPOne" onclick="auto(1)">Auto P1</button>
+		<button class="autoToPTwo" onclick="auto(2)">Auto P2</button>
+		<button class="autoWithoutSpecial" onclick="auto(22)">Auto without special</button>
+	</div>
+	<div class="container">
+
+		<div class="players">
+			<div class="player playerOne">
+				<div class="pInfo">
+					<span class="name"></span>
+					<span class="score"></span>
+				</div>
+				<div class="cards"></div>
+			</div>
+			<div class="player playerTwo">
+				<div class="pInfo">
+					<span class="name"></span>
+					<span class="score"></span>
+				</div>
+				<div class="cards"></div>
+			</div>
+		</div>
+		<div class="sideBox">
+		</div>
+
+		<div class="cardsContainer">
+		</div>
+
+		<div class="cardsGrid">
+			<div class="forCards"></div>
+		</div>
+	</div>
+</body>
+</html>

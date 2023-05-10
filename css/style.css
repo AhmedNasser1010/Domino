@@ -1,0 +1,347 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #607d8b;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+	height: 100vh;
+	position: relative;
+}
+
+.dominoCard {
+	position: relative;
+	font-size: 80px;
+	color: white;
+}
+
+.dominoCard::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  background-color: transparent;
+  width: 33px;
+  height: 68px;
+}
+
+.isHidden::before {
+	background-color: white;
+}
+
+.players {
+	display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.players .player {
+	width: 300px;
+	height: 40px;
+	background-color: #9e9e9e;
+	border-radius: 8px;
+	margin: 8px;
+	padding: 10px;
+	position: relative;
+}
+
+.players .player .pInfo {
+	position: absolute;
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+}
+
+.players .player .cards {
+	display: flex;
+}
+
+.players .player .cards {
+	margin-left: 70px;
+}
+
+.players .playerTwo .cards {
+	transform: translateY(-22px);
+}
+
+.cardsContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+  flex-wrap: wrap;
+}
+
+.sideBox {
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;
+  top: -50%;
+  right: -92%;
+  transform: translate(0%, -50%);
+  width: fit-content;
+}
+
+.sideBox .card {
+	transform: translate(-15px, 0px) rotate(90deg);
+}
+
+.sideBox .card:not(:first-of-type) {
+	margin-top: -40px;
+}
+
+/* cards */
+.card {
+	width: 32px;
+	height: 62px;
+	border-radius: 3px;
+	background-color: white;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+  justify-content: space-between;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+	cursor: pointer;
+}
+
+.card.selected {
+	border: 3px solid #525252;
+	border-style: double;
+}
+
+.card::before {
+  content: "";
+  width: 25px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #525252;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card::after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.card .top ul,
+.card .down ul {
+	padding: 1.5px 1.5px;
+	display: flex;
+	height: 26px;
+}
+
+.card .down ul li,
+.card .top ul li {
+	display: block;
+	width: 4px;
+	height: 4px;
+	background-color: #525252;
+	border-radius: 50%;
+}
+
+/* one */
+.card .top.one ul,
+.card .down.one ul {
+ 	justify-content: center;
+  align-items: center;
+}
+
+/* two */
+.card .top.two ul,
+.card .down.two ul {
+	justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.card .top.two ul li:nth-of-type(1),
+.card .down.two ul li:nth-of-type(1) {
+	transform: translate(8px, 2px);
+}
+
+.card .top.two ul li:nth-of-type(2),
+.card .down.two ul li:nth-of-type(2) {
+	transform: translate(-8px, -2px);
+}
+
+/* three */
+.card .top.three ul,
+.card .down.three ul {
+	justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.card .top.three ul li:nth-of-type(1),
+.card .down.three ul li:nth-of-type(1) {
+	transform: translate(8px, 2px);
+}
+.card .top.three ul li:nth-of-type(3),
+.card .down.three ul li:nth-of-type(3) {
+	transform: translate(-8px, -2px);
+}
+
+/* four */
+.card .top.four ul,
+.card .down.four ul {
+	justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.card .down.four ul li:nth-of-type(1),
+.card .top.four ul li:nth-of-type(1) {
+	transform: translate(8px, 2px);
+}
+.card .down.four ul li:nth-of-type(2),
+.card .top.four ul li:nth-of-type(2) {
+	transform: translate(-8px, -5px)
+}
+.card .down.four ul li:nth-of-type(3),
+.card .top.four ul li:nth-of-type(3) {
+	transform: translate(8px, 5px);
+}
+.card .down.four ul li:nth-of-type(4),
+.card .top.four ul li:nth-of-type(4) {
+	transform: translate(-8px, -2px);
+}
+
+/* five */
+.card .top.five ul,
+.card .down.five ul {
+	justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.card .down.five ul li:nth-of-type(1),
+.card .top.five ul li:nth-of-type(1) {
+	transform: translate(8px, 2px);
+}
+.card .down.five ul li:nth-of-type(2),
+.card .top.five ul li:nth-of-type(2) {
+	transform: translate(-8px, -3.4px);
+}
+.card .down.five ul li:nth-of-type(4),
+.card .top.five ul li:nth-of-type(4) {
+	transform: translate(-8px, 3.6px);
+}
+.card .down.five ul li:nth-of-type(5),
+.card .top.five ul li:nth-of-type(5) {
+	transform: translate(8px, -2px);
+}
+
+/* six */
+.card .top.six ul,
+.card .down.six ul {
+	justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.card .down.six ul li:nth-of-type(1),
+.card .top.six ul li:nth-of-type(1) {
+	transform: translate(8px, 2px);
+}
+.card .down.six ul li:nth-of-type(2),
+.card .top.six ul li:nth-of-type(2) {
+	transform: translate(-8px, -2.4px);
+}
+.card .down.six ul li:nth-of-type(3),
+.card .top.six ul li:nth-of-type(3) {
+	transform: translate(8px, 2px);
+}
+.card .down.six ul li:nth-of-type(4),
+.card .top.six ul li:nth-of-type(4) {
+	transform: translate(-8px, -2px);
+}
+.card .down.six ul li:nth-of-type(5),
+.card .top.six ul li:nth-of-type(5) {
+	transform: translate(-8px, 2.4px);
+}
+.card .down.six ul li:nth-of-type(6),
+.card .top.six ul li:nth-of-type(6) {
+	transform: translate(8px, -2px);
+}
+
+.card.flip::before,
+.card.flip::after,
+.card.flip .top,
+.card.flip .down {
+	display: none;
+}
+/* ^cards^ */
+
+button {
+	all: unset;
+}
+
+.divTools {
+	position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: min-content;
+  z-index: 99;
+}
+
+.divTools button {
+	color: white;
+	cursor: pointer;
+	font-size: 10px;
+	background-color: gray;
+	border-radius: 4px;
+	padding: 2px 3px;
+	margin-bottom: 3px;
+	width: 100%;
+	text-align: center;
+}
+
+/*~~~~~~~~~~~~~~~~*/
+.cardsGrid {
+	border: 2px solid red;
+	width: calc(32px * 10);
+	height: calc(32px * 10);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-wrap: wrap;
+	display: none;
+}
+
+.cardsGrid .square {
+	width: 30.4px;
+  height: 30.5px;
+	display: block;
+	border: 0.5px solid red;
+}
+
+.cardsGrid .forCards {
+	position: absolute;
+	width: calc(32px * 10);
+	height: calc(32px * 10);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/*~~~~~~~~~~~~~~~~*/
